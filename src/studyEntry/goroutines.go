@@ -1,8 +1,8 @@
 package main
 
 import (
-"fmt"
-"time"
+	"fmt"
+	"time"
 )
 
 func say(s string) {
@@ -18,7 +18,6 @@ func gort_app() {
 
 }
 
-
 func sum(s []int, c chan int) {
 	sum := 0
 	for _, v := range s {
@@ -26,7 +25,6 @@ func sum(s []int, c chan int) {
 	}
 	c <- sum // send sum to c
 }
-
 
 func fibonacci(n int, c chan int) {
 	x, y := 0, 1
@@ -36,8 +34,6 @@ func fibonacci(n int, c chan int) {
 	}
 	close(c)
 }
-
-
 
 func gort_app01() {
 	s := []int{7, 2, 8, -9, 4, 0}
@@ -49,15 +45,12 @@ func gort_app01() {
 
 	fmt.Println(x, y, x+y)
 
-
 	//############
-	ch := make(chan int, 10)	//Sends block only when the buffer is full. Receives block when the buffer is empty.
+	ch := make(chan int, 10) //Sends block only when the buffer is full. Receives block when the buffer is empty.
 	ch <- 1
 	ch <- 2
 	fmt.Println(<-ch)
 	fmt.Println(<-ch)
-
-
 
 	//	######
 	cc := make(chan int, 10)
@@ -65,6 +58,5 @@ func gort_app01() {
 	for i := range cc {
 		fmt.Println(i)
 	}
-
 
 }

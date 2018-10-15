@@ -30,12 +30,12 @@ func f_app() {
 	fibonacci01(c, quit)
 }
 
-func f01_app()  {
+func f01_app() {
 	tick := time.Tick(100 * time.Millisecond)
 	boom := time.After(500 * time.Millisecond)
 	for {
 		select {
-		case tmp:= <-tick:
+		case tmp := <-tick:
 			fmt.Println(tmp)
 			fmt.Println("tick.")
 		case <-boom:
@@ -47,4 +47,3 @@ func f01_app()  {
 		}
 	}
 }
-

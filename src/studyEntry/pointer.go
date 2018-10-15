@@ -7,29 +7,28 @@ const MAX int = 3
 //指针作为函数参数
 func swap(x *int, y *int) {
 	var temp int
-	temp = *x    /* 保存 x 地址的值 */
-	*x = *y      /* 将 y 赋值给 x */
-	*y = temp    /* 将 temp 赋值给 y */
+	temp = *x /* 保存 x 地址的值 */
+	*x = *y   /* 将 y 赋值给 x */
+	*y = temp /* 将 temp 赋值给 y */
 }
 
 func swap_app() {
 	/* 定义局部变量 */
 	var a int = 100
-	var b int= 200
+	var b int = 200
 
-	fmt.Printf("交换前 a 的值 : %d\n", a )
-	fmt.Printf("交换前 b 的值 : %d\n", b )
+	fmt.Printf("交换前 a 的值 : %d\n", a)
+	fmt.Printf("交换前 b 的值 : %d\n", b)
 
 	/* 调用函数用于交换值
 	* &a 指向 a 变量的地址
 	* &b 指向 b 变量的地址
-	*/
-	swap(&a, &b);
+	 */
+	swap(&a, &b)
 
-	fmt.Printf("交换后 a 的值 : %d\n", a )
-	fmt.Printf("交换后 b 的值 : %d\n", b )
+	fmt.Printf("交换后 a 的值 : %d\n", a)
+	fmt.Printf("交换后 b 的值 : %d\n", b)
 }
-
 
 func ptr() {
 	// 00 常规用法 ***************************************************************//
@@ -77,8 +76,8 @@ func ptr() {
 	pptr = &ptr02
 
 	/* 获取 pptr 的值 */
-	fmt.Printf("变量 a02 = %d\n", a02 )
-	fmt.Printf("指针变量 *ptr02 = %d\n", *ptr02 )
+	fmt.Printf("变量 a02 = %d\n", a02)
+	fmt.Printf("指针变量 *ptr02 = %d\n", *ptr02)
 	fmt.Printf("指向指针的指针变量 **pptr = %d\n", **pptr) //访问指向指针的指针变量值需要使用两个 * 号
 
 	// 04 指针作为函数参数  ***************************************************************//
